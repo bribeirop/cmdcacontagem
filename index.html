@@ -13,4 +13,289 @@
       --primary: #0b3c5d;
       --secondary: #d4a017;
       --bg: #f4f7fb;
+      --dark: #1f2933;
+      --gray: #6b7280;
+      --white: #ffffff;
+    }
 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 100px 0;
+    }
+
+    /* HEADER */
+    header {
+      background: var(--white);
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--primary);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo span {
+      background: var(--primary);
+      color: var(--white);
+      padding: 10px 14px;
+      border-radius: 50%;
+      font-size: 0.9rem;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #0b3c5d, #06283d);
+      color: var(--white);
+    }
+
+    .hero-content {
+      max-width: 720px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #d1d5db;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      background: var(--secondary);
+      color: #000;
+      padding: 18px 40px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    /* TITLES */
+    .section-title {
+      max-width: 700px;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-size: 2.4rem;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: var(--gray);
+    }
+
+    /* MODULES */
+    .modules {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
+    }
+
+    .module {
+      background: var(--white);
+      padding: 36px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      border-top: 6px solid var(--primary);
+    }
+
+    .module span {
+      font-weight: 600;
+      color: var(--secondary);
+      font-size: 0.85rem;
+    }
+
+    .module h3 {
+      margin: 12px 0;
+      color: var(--primary);
+    }
+
+    /* INFO */
+    .info-box {
+      background: var(--white);
+      padding: 36px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+    }
+
+    /* FORM */
+    .form-section {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    form {
+      max-width: 520px;
+      margin: auto;
+      background: var(--white);
+      padding: 44px;
+      border-radius: 20px;
+      color: var(--dark);
+    }
+
+    form h3 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: var(--primary);
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 18px;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      font-size: 1rem;
+    }
+
+    footer {
+      background: #031d2f;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="logo">
+      <span>FIA</span> Formação de Conselheiros
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-content">
+    <h1>Curso Completo de Formação para Conselheiros FIA</h1>
+    <p>
+      Formação educacional estruturada em módulos,
+      desenvolvida para capacitar conselheiros e gestores
+      na atuação ética, técnica e responsável.
+    </p>
+    <a href="#inscricao" class="btn">Quero me inscrever</a>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-title">
+      <h2>Estrutura do Curso</h2>
+      <p>Conteúdo organizado por módulos progressivos.</p>
+    </div>
+
+    <div class="modules">
+      <div class="module">
+        <span>Módulo 01</span>
+        <h3>Fundamentos do FIA</h3>
+        <p>Base legal, ECA e atribuições do conselheiro.</p>
+      </div>
+
+      <div class="module">
+        <span>Módulo 02</span>
+        <h3>Gestão de Recursos</h3>
+        <p>Captação, planejamento e aplicação financeira.</p>
+      </div>
+
+      <div class="module">
+        <span>Módulo 03</span>
+        <h3>Projetos e Programas</h3>
+        <p>Análise, aprovação e acompanhamento.</p>
+      </div>
+
+      <div class="module">
+        <span>Módulo 04</span>
+        <h3>Prestação de Contas</h3>
+        <p>Transparência, indicadores e controle social.</p>
+      </div>
+
+      <div class="module">
+        <span>Módulo 05</span>
+        <h3>Boas Práticas</h3>
+        <p>Casos reais, ética e atuação responsável.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-title">
+      <h2>Certificação e Metodologia</h2>
+    </div>
+
+    <div class="info-box">
+      <p>
+        ✔️ Curso 100% educativo  
+        ✔️ Conteúdo didático e atualizado  
+        ✔️ Metodologia prática e acessível  
+        ✔️ Certificado de participação  
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="form-section" id="inscricao">
+  <div class="container">
+    <form>
+      <h3>Inscrição no Curso</h3>
+      <input type="text" placeholder="Nome completo" required>
+      <input type="email" placeholder="E-mail" required>
+      <input type="text" placeholder="Cidade / Estado" required>
+      <button class="btn" style="width:100%">Confirmar inscrição</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  © 2025 Formação FIA • Plataforma Educacional
+</footer>
+
+</body>
+</html>
