@@ -8,40 +8,24 @@
 </head>
 <body>
 
-<header class="topbar">
-  <div class="container">
-    <div class="logo">FIA<span>Edu</span></div>
-  </div>
-</header>
+<h2>Módulo 1 — Fundamentos</h2>
 
-<section class="section">
-  <div class="container">
-    <h2>Módulo 1 — Fundamentos do FIA</h2>
+<p>Conteúdo introdutório do curso.</p>
 
-    <p>Introdução ao Fundo da Infância e Adolescência.</p>
+<button id="btnConcluir">Concluir Módulo</button>
 
-    <ul>
-      <li>Conceito e base legal</li>
-      <li>Papel do conselheiro</li>
-      <li>Responsabilidades</li>
-    </ul>
-
-    <br><br>
-
-    <!-- BOTÃO FUNCIONAL -->
-    <button id="btnConcluir" class="btn btn-primary">
-      Concluir Módulo
-    </button>
-  </div>
-</section>
-
-<!-- SCRIPT -->
+<!-- JS TEM QUE ESTAR NO FINAL -->
 <script src="script.js"></script>
 <script>
+  console.log("JS carregado no módulo 1");
+
   document.getElementById("btnConcluir").addEventListener("click", function () {
     concluirModulo(1);
   });
 </script>
+
+</body>
+</html>
 
 </body>
 </html>
