@@ -1,9 +1,0 @@
-/ (raiz)
-├── index.html              ← página principal do curso
-├── aluno.html              ← área do aluno
-├── modulo1.html
-├── modulo2.html
-├── modulo3.html
-├── certificado.html        ← modelo do certificado
-├── style.css               ← identidade visual
-└── script.js               ← lógica simples
