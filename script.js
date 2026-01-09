@@ -12,24 +12,34 @@ function concluirModulo(numero) {
 }
 
 function carregarProgresso() {
-  let progresso = JSON.parse(localStorage.getItem("progressoCurso")) || [];
+  const progresso = JSON.parse(localStorage.getItem("progressoCurso")) || [];
 
   document.querySelectorAll(".card").forEach(card => {
     const modulo = parseInt(card.dataset.modulo);
     const botao = card.querySelector(".btn");
 
+    // Módulo concluído
     if (progresso.includes(modulo)) {
       botao.textContent = "Concluído ✅";
       botao.classList.remove("bloqueado");
+      botao.removeAttribute("href");
       botao.style.pointerEvents = "none";
+      return;
     }
 
+    // Liberar próximo módulo
     if (progresso.includes(modulo - 1)) {
-      if (botao.textContent === "Bloqueado") {
-        botao.textContent = "Acessar";
-        botao.href = `modulo${modulo}.html`;
-        botao.classList.remove("bloqueado");
-      }
+      botao.textContent = "Acessar";
+      botao.href = `modulo${modulo}.html`;
+      botao.classList.remove("bloqueado");
+      botao.style.pointerEvents = "auto";
+      return;
     }
+
+    // Ainda bloqueado
+    botao.textContent = "Bloqueado";
+      botao.removeAttribute("href");
+      botao.classList.add("bloqueado");
+      botao.style.pointerEvents = "none";
   });
 }
