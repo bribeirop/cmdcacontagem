@@ -16,25 +16,32 @@
 
 <section class="section">
   <div class="container">
-    <h2>Módulo 1 — Fundamentos</h2>
-    <p>
-      Conteúdo introdutório sobre o FIA, legislação e papel do conselheiro.
-    </p>
+    <h2>Módulo 1 — Fundamentos do FIA</h2>
+
+    <p>Introdução ao Fundo da Infância e Adolescência.</p>
 
     <ul>
-      <li>O que é o FIA</li>
-      <li>Base legal</li>
+      <li>Conceito e base legal</li>
+      <li>Papel do conselheiro</li>
       <li>Responsabilidades</li>
     </ul>
 
     <br><br>
 
-    <button class="btn btn-primary" onclick="concluirModulo(1)">
+    <!-- BOTÃO FUNCIONAL -->
+    <button id="btnConcluir" class="btn btn-primary">
       Concluir Módulo
     </button>
   </div>
 </section>
 
+<!-- SCRIPT -->
 <script src="script.js"></script>
+<script>
+  document.getElementById("btnConcluir").addEventListener("click", function () {
+    concluirModulo(1);
+  });
+</script>
+
 </body>
 </html>
