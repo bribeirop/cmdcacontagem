@@ -2,30 +2,39 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Módulo 1 – Fundamentos do FIA</title>
+  <title>Módulo 1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>Módulo 1 – Fundamentos do FIA</header>
+<header class="topbar">
+  <div class="container">
+    <div class="logo">FIA<span>Edu</span></div>
+  </div>
+</header>
 
-<div class="container">
-  <div class="card">
-    <h2>Conteúdo do Módulo</h2>
+<section class="section">
+  <div class="container">
+    <h2>Módulo 1 — Fundamentos</h2>
     <p>
-      Neste módulo você aprenderá os fundamentos legais do FIA,
-      o ECA e o papel do conselheiro.
+      Conteúdo introdutório sobre o FIA, legislação e papel do conselheiro.
     </p>
 
     <ul>
+      <li>O que é o FIA</li>
       <li>Base legal</li>
       <li>Responsabilidades</li>
-      <li>Boas práticas</li>
     </ul>
 
-    <a class="btn" href="aluno.html">Voltar à área do aluno</a>
-  </div>
-</div>
+    <br><br>
 
+    <button class="btn btn-primary" onclick="concluirModulo(1)">
+      Concluir Módulo
+    </button>
+  </div>
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
