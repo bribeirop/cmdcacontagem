@@ -2,32 +2,84 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Módulo 1 – Introdução</title>
+  <title>Módulo 1 – Introdução ao CMDCA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header class="topo">
   <h1>Módulo 1</h1>
-  <p>Fundamentos do Curso</p>
+  <p>Introdução ao CMDCA</p>
 </header>
 
 <main class="conteudo">
-  <h2>O que você vai aprender</h2>
-  <ul>
-    <li>O papel do CMDCA</li>
-    <li>Base legal e atribuições</li>
-    <li>Importância social</li>
-  </ul>
 
-  <p>
-    Este módulo apresenta os conceitos iniciais essenciais para compreender
-    o funcionamento do conselho e sua relevância.
-  </p>
+  <!-- 🎥 VÍDEO -->
+  <section class="bloco">
+    <h2>📺 Aula em Vídeo</h2>
 
-  <button class="btn" onclick="concluirModulo(1)">
-    Concluir Módulo 1
-  </button>
+    <div class="video">
+      <iframe 
+        src="https://www.youtube.com/embed/VIDEO_ID_AQUI"
+        title="Aula CMDCA"
+        frameborder="0"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <!-- 📘 TEXTO -->
+  <section class="bloco">
+    <h2>📘 Conteúdo Teórico</h2>
+
+    <p>
+      O Conselho Municipal dos Direitos da Criança e do Adolescente (CMDCA)
+      é um órgão deliberativo e controlador das políticas públicas
+      voltadas à infância e adolescência.
+    </p>
+
+    <p>
+      Sua atuação está prevista no Estatuto da Criança e do Adolescente (ECA)
+      e envolve planejamento, fiscalização e controle social.
+    </p>
+
+    <ul>
+      <li>Base legal do CMDCA</li>
+      <li>Funções principais</li>
+      <li>Importância social</li>
+    </ul>
+  </section>
+
+  <!-- ❓ QUIZ -->
+  <section class="bloco quiz">
+    <h2>❓ Quiz de Fixação</h2>
+
+    <p><strong>Pergunta:</strong> Qual é a principal função do CMDCA?</p>
+
+    <label>
+      <input type="radio" name="quiz" value="errado">
+      Fiscalizar empresas privadas
+    </label>
+
+    <label>
+      <input type="radio" name="quiz" value="correto">
+      Deliberar e controlar políticas públicas para crianças e adolescentes
+    </label>
+
+    <label>
+      <input type="radio" name="quiz" value="errado">
+      Aplicar penalidades judiciais
+    </label>
+
+    <button class="btn" onclick="validarQuiz(1)">
+      Enviar resposta
+    </button>
+
+    <p id="quiz-msg" class="mensagem"></p>
+  </section>
+
 </main>
 
 <script src="script.js"></script>
