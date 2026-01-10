@@ -80,4 +80,20 @@ function login(event) {
   localStorage.setItem("aluno_nome", nome);
 
   window.location.href = "area-aluno.html";
+
+   function concluirModulo(numero) {
+  let progresso = JSON.parse(localStorage.getItem("progresso")) || {
+    modulo1: false,
+    modulo2: false,
+    modulo3: false,
+    modulo4: false
+  };
+
+  progresso[`modulo${numero}`] = true;
+
+  localStorage.setItem("progresso", JSON.stringify(progresso));
+
+  window.location.href = "area-aluno.html";
+}
+
 }
