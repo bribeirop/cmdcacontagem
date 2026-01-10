@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Módulo 1 — Introdução</title>
+  <title>Módulo 1 — Fundamentos do FIA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -12,9 +12,8 @@
 <header class="topbar fixed">
   <div class="container">
     <div class="logo">FIA<span>Edu</span></div>
-
     <nav class="menu">
-      <a href="area-aluno.html">← Voltar</a>
+      <a href="area-aluno.html">← Área do Aluno</a>
     </nav>
   </div>
 </header>
@@ -29,8 +28,7 @@
       <h3>📽 Aula em vídeo</h3>
       <div class="video">
         <iframe 
-          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-          title="Aula Módulo 1"
+          src="https://www.youtube.com/embed/VIDEO_AQUI" 
           allowfullscreen>
         </iframe>
       </div>
@@ -40,13 +38,26 @@
     <div class="bloco">
       <h3>📘 Conteúdo</h3>
       <p>
-        Neste módulo você aprenderá os conceitos básicos do Fundo da Infância e Adolescência (FIA),
-        seu papel legal, importância social e atuação dos conselhos.
+        O Fundo da Infância e Adolescência (FIA) é um instrumento legal
+        destinado ao financiamento de políticas públicas voltadas à criança
+        e ao adolescente.
       </p>
-      <p>
-        O FIA é um instrumento fundamental para garantir direitos previstos no Estatuto da Criança
-        e do Adolescente (ECA).
-      </p>
+    </div>
+
+    <!-- QUIZ -->
+    <div class="bloco quiz">
+      <h3>📝 Quiz rápido</h3>
+
+      <label>
+        <input type="radio" name="q1"> O FIA financia políticas públicas
+      </label>
+      <label>
+        <input type="radio" name="q1"> O FIA é um imposto obrigatório
+      </label>
+
+      <button class="btn" onclick="alert('Quiz registrado!')">
+        Enviar resposta
+      </button>
     </div>
 
     <!-- CONCLUIR -->
@@ -61,8 +72,4 @@
 
 <script src="script.js"></script>
 </body>
-
-<button class="btn" onclick="concluirModulo(1)">
-  Marcar como concluído
-</button>
 </html>
