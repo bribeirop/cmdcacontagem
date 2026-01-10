@@ -1,30 +1,16 @@
 /* =========================
-   LOGIN E AUTENTICAÇÃO
+   LOGIN
 ========================= */
+
 function verificarLogin() {
-  const aluno = localStorage.getItem("aluno_nome");
-
-  if (!aluno) {
+  if (localStorage.getItem("alunoLogado") !== "true") {
     window.location.href = "index.html";
-    return;
   }
 
-  const campo = document.getElementById("alunoNome");
-  if (campo) campo.innerText = aluno;
-}
-
-function login(event) {
-  event.preventDefault();
-
-  const nome = document.getElementById("nome").value;
-
-  if (!nome || nome.trim() === "") {
-    alert("Digite seu nome");
-    return;
+  const nome = localStorage.getItem("alunoNome");
+  if (nome) {
+    document.getElementById("alunoNome").innerText = nome;
   }
-
-  localStorage.setItem("aluno_nome", nome.trim());
-  window.location.href = "area-aluno.html";
 }
 
 function logout() {
@@ -35,66 +21,48 @@ function logout() {
 /* =========================
    PROGRESSO DO CURSO
 ========================= */
+
 function carregarProgresso() {
   const progresso = JSON.parse(localStorage.getItem("progresso")) || {
-    modulo1: false,
-    modulo2: false,
-    modulo3: false,
-    modulo4: false
+    1: true,
+    2: false,
+    3: false,
+    4: false
   };
 
-  const cards = document.querySelectorAll(".card");
-
-  cards.forEach(card => {
+  document.querySelectorAll(".card").forEach(card => {
     const modulo = card.dataset.modulo;
     const botao = card.querySelector(".btn");
 
-    if (!botao) return;
-
-    if (modulo === "1") {
+    if (progresso[modulo]) {
       botao.classList.remove("bloqueado");
-      botao.innerText = progresso.modulo1 ? "Concluído ✅" : "Acessar";
-      botao.href = "modulo1.html";
-    }
-
-    if (modulo === "2" && progresso.modulo1) {
-      botao.classList.remove("bloqueado");
-      botao.innerText = progresso.modulo2 ? "Concluído ✅" : "Acessar";
-      botao.href = "modulo2.html";
-    }
-
-    if (modulo === "3" && progresso.modulo2) {
-      botao.classList.remove("bloqueado");
-      botao.innerText = progresso.modulo3 ? "Concluído ✅" : "Acessar";
-      botao.href = "modulo3.html";
-    }
-
-    if (modulo === "4" && progresso.modulo3) {
-      botao.classList.remove("bloqueado");
-      botao.innerText = progresso.modulo4 ? "Concluído ✅" : "Acessar";
-      botao.href = "modulo4.html";
+      botao.innerText = "Acessar";
+      botao.href = `modulo${modulo}.html`;
+    } else {
+      botao.classList.add("bloqueado");
+      botao.innerText = "Bloqueado";
+      botao.removeAttribute("href");
     }
   });
 
-  if (progresso.modulo4) {
-    const cert = document.getElementById("certificado");
-    if (cert) cert.style.display = "block";
+  // Certificado
+  if (progresso[1] && progresso[2] && progresso[3] && progresso[4]) {
+    document.getElementById("certificado").style.display = "block";
   }
 }
 
 /* =========================
-   CONCLUSÃO DE MÓDULO
+   CONCLUIR MÓDULO
 ========================= */
-function concluirModulo(numero) {
-  const progresso = JSON.parse(localStorage.getItem("progresso")) || {
-    modulo1: false,
-    modulo2: false,
-    modulo3: false,
-    modulo4: false
-  };
 
-  progresso[`modulo${numero}`] = true;
+function concluirModulo(numero) {
+  const progresso = JSON.parse(localStorage.getItem("progresso")) || {};
+
+  progresso[numero] = true;
+  progresso[numero + 1] = true;
+
   localStorage.setItem("progresso", JSON.stringify(progresso));
 
+  alert("Módulo concluído com sucesso!");
   window.location.href = "area-aluno.html";
 }
