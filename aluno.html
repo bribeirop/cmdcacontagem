@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -6,37 +6,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body onload="verificarLogin(); carregarProgresso();">
 
-<header class="topbar">
+<!-- MENU FIXO -->
+<header class="topbar fixed">
   <div class="container">
-    <div class="logo">FIA<span>Edu</span></div>
 
-    <!-- BOTÃO SAIR -->
-    <button class="btn btn-logout" onclick="logout()">Sair</button>
-  </div>
-</header>
-  <div class="container">
-    <div class="logo">FIA<span>Edu</span></div>
-    <nav>
-      <a href="index.html">Início</a>
+    <div class="logo">
+      FIA<span>Edu</span>
+    </div>
+
+    <nav class="menu">
+      <a href="area-aluno.html">📚 Curso</a>
+      <a href="#progresso">📊 Progresso</a>
+      <a href="#certificado">🎓 Certificado</a>
     </nav>
+
+    <div class="menu-user">
+      <span id="alunoNome"></span>
+      <button class="btn-logout" onclick="logout()">Sair</button>
+    </div>
+
   </div>
 </header>
 
-<section class="section">
+<!-- CONTEÚDO -->
+<section class="section" id="progresso">
   <div class="container">
+
     <h2>Área do Aluno</h2>
-    
     <p>Bem-vindo(a), <strong id="alunoNome"></strong></p>
-    
     <p>Progresso do curso</p>
 
     <div class="cards">
 
       <div class="card" data-modulo="1">
         <h3>Módulo 1</h3>
-        <a class="btn bloqueado">Bloqueado</a>
+        <a href="modulo1.html" class="btn">Acessar</a>
       </div>
 
       <div class="card" data-modulo="2">
@@ -56,6 +63,7 @@
 
     </div>
 
+    <!-- CERTIFICADO -->
     <div id="certificado" style="display:none; margin-top:40px">
       <a href="certificado.html" class="btn btn-primary">
         Gerar Certificado
@@ -66,9 +74,5 @@
 </section>
 
 <script src="script.js"></script>
-<script>
-  carregarProgresso();
-</script>
-
 </body>
 </html>
