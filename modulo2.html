@@ -12,9 +12,8 @@
 <header class="topbar fixed">
   <div class="container">
     <div class="logo">FIA<span>Edu</span></div>
-
-    <nav class="menu">
-      <a href="area-aluno.html">← Voltar</a>
+    <nav>
+      <a href="area-aluno.html">← Área do Aluno</a>
     </nav>
   </div>
 </header>
@@ -24,31 +23,31 @@
 
     <h2>Módulo 2 — Gestão de Recursos</h2>
 
-    <!-- VÍDEO -->
     <div class="bloco">
       <h3>📽 Aula em vídeo</h3>
       <div class="video">
-        <iframe
-          src="https://www.youtube.com/embed/9bZkp7q19f0"
-          title="Aula Módulo 2"
-          allowfullscreen>
-        </iframe>
+        <iframe src="https://www.youtube.com/embed/VIDEO_AQUI" allowfullscreen></iframe>
       </div>
     </div>
 
-    <!-- TEXTO -->
     <div class="bloco">
       <h3>📘 Conteúdo</h3>
       <p>
-        Neste módulo você aprenderá como funciona a gestão dos recursos do FIA,
-        incluindo captação, planejamento, execução e acompanhamento financeiro.
+        A correta gestão dos recursos do FIA garante que os valores arrecadados
+        sejam aplicados de forma legal, eficiente e transparente.
       </p>
       <p>
-        Uma boa gestão garante impacto social, transparência e continuidade dos projetos.
+        O conselheiro deve acompanhar projetos, aprovações, execução e fiscalização.
       </p>
     </div>
 
-    <!-- CONCLUIR -->
+    <div class="bloco quiz">
+      <h3>📝 Quiz rápido</h3>
+      <label><input type="radio" name="q2"> Os recursos podem ser usados sem controle</label>
+      <label><input type="radio" name="q2"> Os recursos devem seguir plano aprovado</label>
+      <button class="btn" onclick="alert('Resposta registrada!')">Enviar resposta</button>
+    </div>
+
     <div class="bloco">
       <button class="btn btn-primary" onclick="concluirModulo(2)">
         Concluir Módulo
@@ -60,9 +59,4 @@
 
 <script src="script.js"></script>
 </body>
-
-<button class="btn" onclick="concluirModulo(2)">
-  Marcar como concluído
-</button>
-
 </html>
