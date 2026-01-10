@@ -162,3 +162,40 @@ footer {
   cursor: pointer;
   border: none;
 }
+
+/* MENU FIXO */
+.topbar.fixed {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.menu a:hover {
+  color: var(--primary);
+}
+
+.menu-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Espaço para compensar menu fixo */
+.section {
+  padding-top: 100px;
+}
