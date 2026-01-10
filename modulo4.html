@@ -3,30 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <title>Módulo 4 – Conclusão</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header class="topo">
   <h1>Módulo 4</h1>
-  <p>Conclusão do Curso</p>
+  <p>Encerramento do Curso</p>
 </header>
 
 <main class="conteudo">
-  <h2>Parabéns!</h2>
-  <p>
-    Você concluiu todos os módulos do curso.
-    Agora você já compreende o funcionamento, gestão
-    e responsabilidades do CMDCA.
-  </p>
 
-  <p>
-    Clique no botão abaixo para finalizar sua jornada.
-  </p>
+  <section class="bloco">
+    <h2>📺 Aula Final</h2>
+    <div class="video">
+      <iframe 
+        src="https://www.youtube.com/embed/VIDEO_ID_AQUI"
+        frameborder="0"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
 
-  <button class="btn" onclick="concluirModulo(4)">
-    Finalizar Curso
-  </button>
+  <section class="bloco">
+    <h2>📘 Encerramento</h2>
+    <p>
+      Parabéns por concluir o curso!
+      Agora você possui uma visão clara sobre o papel,
+      a gestão e a responsabilidade do CMDCA.
+    </p>
+  </section>
+
+  <section class="bloco quiz">
+    <h2>❓ Quiz Final</h2>
+    <p><strong>Pergunta:</strong> O CMDCA atua em qual nível?</p>
+
+    <label>
+      <input type="radio" name="quiz" value="errado">
+      Estadual
+    </label>
+
+    <label>
+      <input type="radio" name="quiz" value="correto">
+      Municipal
+    </label>
+
+    <label>
+      <input type="radio" name="quiz" value="errado">
+      Federal
+    </label>
+
+    <button class="btn" onclick="validarQuiz(4)">
+      Enviar resposta
+    </button>
+
+    <p id="quiz-msg" class="mensagem"></p>
+  </section>
+
 </main>
 
 <script src="script.js"></script>
