@@ -64,3 +64,35 @@ function carregarProgresso() {
     if (certificado) certificado.style.display = 'block';
   }
 }
+
+/* LOGIN */
+function login() {
+  const nome = document.getElementById('nome').value;
+  const email = document.getElementById('email').value;
+  const msg = document.getElementById('login-msg');
+
+  if (!nome || !email) {
+    msg.innerText = 'Preencha todos os campos.';
+    msg.style.color = 'red';
+    return;
+  }
+
+  localStorage.setItem('aluno_nome', nome);
+  localStorage.setItem('aluno_email', email);
+  localStorage.setItem('logado', 'true');
+
+  window.location.href = 'area-aluno.html';
+}
+
+/* PROTEÇÃO DE PÁGINA */
+function verificarLogin() {
+  if (localStorage.getItem('logado') !== 'true') {
+    window.location.href = 'index.html';
+  }
+}
+
+/* LOGOUT */
+function logout() {
+  localStorage.removeItem('logado');
+  window.location.href = 'index.html';
+}
