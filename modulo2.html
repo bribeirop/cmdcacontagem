@@ -2,31 +2,70 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Módulo 2 – Gestão</title>
+  <title>Módulo 2 – Gestão e Funcionamento</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header class="topo">
   <h1>Módulo 2</h1>
-  <p>Gestão e Funcionamento</p>
+  <p>Gestão e Funcionamento do CMDCA</p>
 </header>
 
 <main class="conteudo">
-  <h2>Conteúdo</h2>
-  <ul>
-    <li>Planejamento</li>
-    <li>Gestão de recursos</li>
-    <li>Organização administrativa</li>
-  </ul>
 
-  <p>
-    Aqui você aprende como estruturar e gerir corretamente as ações do conselho.
-  </p>
+  <section class="bloco">
+    <h2>📺 Aula em Vídeo</h2>
+    <div class="video">
+      <iframe 
+        src="https://www.youtube.com/embed/VIDEO_ID_AQUI"
+        frameborder="0"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
 
-  <button class="btn" onclick="concluirModulo(2)">
-    Concluir Módulo 2
-  </button>
+  <section class="bloco">
+    <h2>📘 Conteúdo Teórico</h2>
+    <p>
+      A gestão do CMDCA envolve planejamento, organização e acompanhamento
+      das ações voltadas à política de atendimento à criança e ao adolescente.
+    </p>
+    <ul>
+      <li>Planejamento estratégico</li>
+      <li>Gestão de recursos</li>
+      <li>Articulação com a rede</li>
+    </ul>
+  </section>
+
+  <section class="bloco quiz">
+    <h2>❓ Quiz</h2>
+    <p><strong>Pergunta:</strong> Qual é uma atribuição da gestão do CMDCA?</p>
+
+    <label>
+      <input type="radio" name="quiz" value="errado">
+      Aplicar sanções judiciais
+    </label>
+
+    <label>
+      <input type="radio" name="quiz" value="correto">
+      Planejar e acompanhar políticas públicas
+    </label>
+
+    <label>
+      <input type="radio" name="quiz" value="errado">
+      Executar serviços assistenciais
+    </label>
+
+    <button class="btn" onclick="validarQuiz(2)">
+      Enviar resposta
+    </button>
+
+    <p id="quiz-msg" class="mensagem"></p>
+  </section>
+
 </main>
 
 <script src="script.js"></script>
