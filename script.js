@@ -80,8 +80,24 @@ function login(event) {
   localStorage.setItem("aluno_nome", nome);
 
   window.location.href = "area-aluno.html";
+function login(event) {
+  event.preventDefault();
 
-   function concluirModulo(numero) {
+  const nome = document.getElementById("nome").value;
+
+  if (nome.trim() === "") {
+    alert("Digite seu nome");
+    return;
+  }
+
+  localStorage.setItem("aluno_nome", nome);
+  window.location.href = "area-aluno.html";
+}
+
+/* =========================
+   CONCLUIR MÓDULO
+========================= */
+function concluirModulo(numero) {
   let progresso = JSON.parse(localStorage.getItem("progresso")) || {
     modulo1: false,
     modulo2: false,
@@ -90,10 +106,7 @@ function login(event) {
   };
 
   progresso[`modulo${numero}`] = true;
-
   localStorage.setItem("progresso", JSON.stringify(progresso));
 
   window.location.href = "area-aluno.html";
-}
-
 }
