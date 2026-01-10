@@ -2,67 +2,61 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Módulo 4 – Conclusão</title>
+  <title>Módulo 4 — Atuação do Conselheiro</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body onload="verificarLogin()">
 
-<header class="topo">
-  <h1>Módulo 4</h1>
-  <p>Encerramento do Curso</p>
+<header class="topbar fixed">
+  <div class="container">
+    <div class="logo">FIA<span>Edu</span></div>
+
+    <nav class="menu">
+      <a href="area-aluno.html">← Voltar</a>
+    </nav>
+  </div>
 </header>
 
-<main class="conteudo">
+<section class="section">
+  <div class="container">
 
-  <section class="bloco">
-    <h2>📺 Aula Final</h2>
-    <div class="video">
-      <iframe 
-        src="https://www.youtube.com/embed/VIDEO_ID_AQUI"
-        frameborder="0"
-        allowfullscreen>
-      </iframe>
+    <h2>Módulo 4 — Atuação do Conselheiro</h2>
+
+    <!-- VÍDEO -->
+    <div class="bloco">
+      <h3>📽 Aula em vídeo</h3>
+      <div class="video">
+        <iframe
+          src="https://www.youtube.com/embed/l482T0yNkeo"
+          title="Aula Módulo 4"
+          allowfullscreen>
+        </iframe>
+      </div>
     </div>
-  </section>
 
-  <section class="bloco">
-    <h2>📘 Encerramento</h2>
-    <p>
-      Parabéns por concluir o curso!
-      Agora você possui uma visão clara sobre o papel,
-      a gestão e a responsabilidade do CMDCA.
-    </p>
-  </section>
+    <!-- TEXTO -->
+    <div class="bloco">
+      <h3>📘 Conteúdo</h3>
+      <p>
+        Neste módulo final, você compreenderá a atuação prática do conselheiro,
+        responsabilidades éticas, articulação com a rede e impacto social.
+      </p>
+      <p>
+        A atuação consciente fortalece políticas públicas e garante direitos.
+      </p>
+    </div>
 
-  <section class="bloco quiz">
-    <h2>❓ Quiz Final</h2>
-    <p><strong>Pergunta:</strong> O CMDCA atua em qual nível?</p>
+    <!-- CONCLUIR -->
+    <div class="bloco">
+      <button class="btn btn-primary" onclick="concluirModulo(4)">
+        Concluir Curso
+      </button>
+    </div>
 
-    <label>
-      <input type="radio" name="quiz" value="errado">
-      Estadual
-    </label>
-
-    <label>
-      <input type="radio" name="quiz" value="correto">
-      Municipal
-    </label>
-
-    <label>
-      <input type="radio" name="quiz" value="errado">
-      Federal
-    </label>
-
-    <button class="btn" onclick="validarQuiz(4)">
-      Enviar resposta
-    </button>
-
-    <p id="quiz-msg" class="mensagem"></p>
-  </section>
-
-</main>
+  </div>
+</section>
 
 <script src="script.js"></script>
 </body>
