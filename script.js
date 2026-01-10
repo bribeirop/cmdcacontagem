@@ -1,14 +1,30 @@
 /* =========================
-   LOGIN
+   LOGIN E AUTENTICAÇÃO
 ========================= */
 function verificarLogin() {
   const aluno = localStorage.getItem("aluno_nome");
+
   if (!aluno) {
     window.location.href = "index.html";
-  } else {
-    const campo = document.getElementById("alunoNome");
-    if (campo) campo.innerText = aluno;
+    return;
   }
+
+  const campo = document.getElementById("alunoNome");
+  if (campo) campo.innerText = aluno;
+}
+
+function login(event) {
+  event.preventDefault();
+
+  const nome = document.getElementById("nome").value;
+
+  if (!nome || nome.trim() === "") {
+    alert("Digite seu nome");
+    return;
+  }
+
+  localStorage.setItem("aluno_nome", nome.trim());
+  window.location.href = "area-aluno.html";
 }
 
 function logout() {
@@ -20,7 +36,7 @@ function logout() {
    PROGRESSO DO CURSO
 ========================= */
 function carregarProgresso() {
-  let progresso = JSON.parse(localStorage.getItem("progresso")) || {
+  const progresso = JSON.parse(localStorage.getItem("progresso")) || {
     modulo1: false,
     modulo2: false,
     modulo3: false,
@@ -32,6 +48,8 @@ function carregarProgresso() {
   cards.forEach(card => {
     const modulo = card.dataset.modulo;
     const botao = card.querySelector(".btn");
+
+    if (!botao) return;
 
     if (modulo === "1") {
       botao.classList.remove("bloqueado");
@@ -65,34 +83,15 @@ function carregarProgresso() {
 }
 
 /* =========================
-   CONCLUIR MÓDULO
+   CONCLUSÃO DE MÓDULO
 ========================= */
-function login(event) {
-  event.preventDefault();
-
-  const nome = document.getElementById("nome").value;
-
-  if (nome.trim() === "") {
-    alert("Digite seu nome");
-    return;
-  }
-
-  localStorage.setItem("aluno_nome", nome);
-
-  window.location.href = "area-aluno.html";
-function login(event) {
-  event.preventDefault();
-
-  const nome = document.getElementById("nome").value;
-
-  if (nome.trim() === "") {
-    alert("Digite seu nome");
-    return;
-  }
-
-  localStorage.setItem("aluno_nome", nome);
-  window.location.href = "area-aluno.html";
-}
+function concluirModulo(numero) {
+  const progresso = JSON.parse(localStorage.getItem("progresso")) || {
+    modulo1: false,
+    modulo2: false,
+    modulo3: false,
+    modulo4: false
+  };
 
   progresso[`modulo${numero}`] = true;
   localStorage.setItem("progresso", JSON.stringify(progresso));
