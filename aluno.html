@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
-<body onload="carregarProgresso()">
+
+<body>
 
 <header class="topbar">
   <div class="container">
@@ -22,42 +23,43 @@
     <h2>Área do Aluno</h2>
     <p>Progresso do curso</p>
 
-   <div class="card" data-modulo="1">
-  <h3>Módulo 1</h3>
-  <a href="modulo1.html" class="btn">Acessar</a>
-  </div>
+    <div class="cards">
 
+      <div class="card" data-modulo="1">
+        <h3>Módulo 1</h3>
+        <a class="btn bloqueado">Bloqueado</a>
+      </div>
 
-      <div class="cards">
+      <div class="card" data-modulo="2">
+        <h3>Módulo 2</h3>
+        <a class="btn bloqueado">Bloqueado</a>
+      </div>
 
+      <div class="card" data-modulo="3">
+        <h3>Módulo 3</h3>
+        <a class="btn bloqueado">Bloqueado</a>
+      </div>
 
-  <div class="card" data-modulo="2">
-    <h3>Módulo 2</h3>
-    <a href="modulo2.html" class="btn bloqueado">Bloqueado</a>
-  </div>
+      <div class="card" data-modulo="4">
+        <h3>Módulo 4</h3>
+        <a class="btn bloqueado">Bloqueado</a>
+      </div>
 
-  <div class="card" data-modulo="3">
-    <h3>Módulo 3</h3>
-    <a class="btn bloqueado">Bloqueado</a>
-  </div>
-
-  <div class="card" data-modulo="4">
-    <h3>Módulo 4</h3>
-    <a class="btn bloqueado">Bloqueado</a>
-  </div>
-
-</div>
+    </div>
 
     <div id="certificado" style="display:none; margin-top:40px">
-      <a href="certificado.html" class="btn btn-primary">Gerar Certificado</a>
+      <a href="certificado.html" class="btn btn-primary">
+        Gerar Certificado
+      </a>
     </div>
 
   </div>
 </section>
 
-</html>
-</body>
 <script src="script.js"></script>
 <script>
   carregarProgresso();
 </script>
+
+</body>
+</html>
