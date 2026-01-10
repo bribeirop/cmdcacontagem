@@ -2,71 +2,61 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Módulo 2 – Gestão e Funcionamento</title>
+  <title>Módulo 2 — Gestão de Recursos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body onload="verificarLogin()">
 
-<header class="topo">
-  <h1>Módulo 2</h1>
-  <p>Gestão e Funcionamento do CMDCA</p>
+<header class="topbar fixed">
+  <div class="container">
+    <div class="logo">FIA<span>Edu</span></div>
+
+    <nav class="menu">
+      <a href="area-aluno.html">← Voltar</a>
+    </nav>
+  </div>
 </header>
 
-<main class="conteudo">
+<section class="section">
+  <div class="container">
 
-  <section class="bloco">
-    <h2>📺 Aula em Vídeo</h2>
-    <div class="video">
-      <iframe 
-        src="https://www.youtube.com/embed/VIDEO_ID_AQUI"
-        frameborder="0"
-        allowfullscreen>
-      </iframe>
+    <h2>Módulo 2 — Gestão de Recursos</h2>
+
+    <!-- VÍDEO -->
+    <div class="bloco">
+      <h3>📽 Aula em vídeo</h3>
+      <div class="video">
+        <iframe
+          src="https://www.youtube.com/embed/9bZkp7q19f0"
+          title="Aula Módulo 2"
+          allowfullscreen>
+        </iframe>
+      </div>
     </div>
-  </section>
 
-  <section class="bloco">
-    <h2>📘 Conteúdo Teórico</h2>
-    <p>
-      A gestão do CMDCA envolve planejamento, organização e acompanhamento
-      das ações voltadas à política de atendimento à criança e ao adolescente.
-    </p>
-    <ul>
-      <li>Planejamento estratégico</li>
-      <li>Gestão de recursos</li>
-      <li>Articulação com a rede</li>
-    </ul>
-  </section>
+    <!-- TEXTO -->
+    <div class="bloco">
+      <h3>📘 Conteúdo</h3>
+      <p>
+        Neste módulo você aprenderá como funciona a gestão dos recursos do FIA,
+        incluindo captação, planejamento, execução e acompanhamento financeiro.
+      </p>
+      <p>
+        Uma boa gestão garante impacto social, transparência e continuidade dos projetos.
+      </p>
+    </div>
 
-  <section class="bloco quiz">
-    <h2>❓ Quiz</h2>
-    <p><strong>Pergunta:</strong> Qual é uma atribuição da gestão do CMDCA?</p>
+    <!-- CONCLUIR -->
+    <div class="bloco">
+      <button class="btn btn-primary" onclick="concluirModulo(2)">
+        Concluir Módulo
+      </button>
+    </div>
 
-    <label>
-      <input type="radio" name="quiz" value="errado">
-      Aplicar sanções judiciais
-    </label>
-
-    <label>
-      <input type="radio" name="quiz" value="correto">
-      Planejar e acompanhar políticas públicas
-    </label>
-
-    <label>
-      <input type="radio" name="quiz" value="errado">
-      Executar serviços assistenciais
-    </label>
-
-    <button class="btn" onclick="validarQuiz(2)">
-      Enviar resposta
-    </button>
-
-    <p id="quiz-msg" class="mensagem"></p>
-  </section>
-
-</main>
+  </div>
+</section>
 
 <script src="script.js"></script>
 </body>
