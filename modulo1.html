@@ -2,71 +2,62 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Módulo 1 – Introdução ao CMDCA</title>
+  <title>Módulo 1 — Introdução</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body onload="verificarLogin()">
 
-<header class="topo">
-  <h1>Módulo 1</h1>
-  <p>Introdução ao CMDCA</p>
+<header class="topbar fixed">
+  <div class="container">
+    <div class="logo">FIA<span>Edu</span></div>
+
+    <nav class="menu">
+      <a href="area-aluno.html">← Voltar</a>
+    </nav>
+  </div>
 </header>
 
-<main class="conteudo">
+<section class="section">
+  <div class="container">
 
-  <section class="bloco">
-    <h2>📺 Aula em Vídeo</h2>
-    <div class="video">
-      <iframe 
-        src="https://www.youtube.com/embed/VIDEO_ID_AQUI"
-        frameborder="0"
-        allowfullscreen>
-      </iframe>
+    <h2>Módulo 1 — Fundamentos do FIA</h2>
+
+    <!-- VÍDEO -->
+    <div class="bloco">
+      <h3>📽 Aula em vídeo</h3>
+      <div class="video">
+        <iframe 
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          title="Aula Módulo 1"
+          allowfullscreen>
+        </iframe>
+      </div>
     </div>
-  </section>
 
-  <section class="bloco">
-    <h2>📘 Conteúdo Teórico</h2>
-    <p>
-      O CMDCA é um órgão fundamental para garantir os direitos
-      da criança e do adolescente no âmbito municipal.
-    </p>
-    <ul>
-      <li>Base legal</li>
-      <li>Função deliberativa</li>
-      <li>Controle social</li>
-    </ul>
-  </section>
+    <!-- TEXTO -->
+    <div class="bloco">
+      <h3>📘 Conteúdo</h3>
+      <p>
+        Neste módulo você aprenderá os conceitos básicos do Fundo da Infância e Adolescência (FIA),
+        seu papel legal, importância social e atuação dos conselhos.
+      </p>
+      <p>
+        O FIA é um instrumento fundamental para garantir direitos previstos no Estatuto da Criança
+        e do Adolescente (ECA).
+      </p>
+    </div>
 
-  <section class="bloco quiz">
-    <h2>❓ Quiz</h2>
-    <p><strong>Pergunta:</strong> Qual é o papel do CMDCA?</p>
+    <!-- CONCLUIR -->
+    <div class="bloco">
+      <button class="btn btn-primary" onclick="concluirModulo(1)">
+        Concluir Módulo
+      </button>
+    </div>
 
-    <label>
-      <input type="radio" name="quiz" value="errado">
-      Executar decisões judiciais
-    </label>
-
-    <label>
-      <input type="radio" name="quiz" value="correto">
-      Deliberar e controlar políticas públicas
-    </label>
-
-    <label>
-      <input type="radio" name="quiz" value="errado">
-      Fiscalizar empresas privadas
-    </label>
-
-    <button class="btn" onclick="validarQuiz(1)">
-      Enviar resposta
-    </button>
-
-    <p id="quiz-msg" class="mensagem"></p>
-  </section>
-
-</main>
+  </div>
+</section>
 
 <script src="script.js"></script>
 </body>
