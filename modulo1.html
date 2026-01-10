@@ -2,22 +2,34 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Módulo 1</title>
+  <title>Módulo 1 – Introdução</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2>Módulo 1</h2>
+<header class="topo">
+  <h1>Módulo 1</h1>
+  <p>Fundamentos do Curso</p>
+</header>
 
-<button id="btnConcluir">Concluir Módulo</button>
+<main class="conteudo">
+  <h2>O que você vai aprender</h2>
+  <ul>
+    <li>O papel do CMDCA</li>
+    <li>Base legal e atribuições</li>
+    <li>Importância social</li>
+  </ul>
 
-<!-- AJUSTE O CAMINHO SE NECESSÁRIO -->
+  <p>
+    Este módulo apresenta os conceitos iniciais essenciais para compreender
+    o funcionamento do conselho e sua relevância.
+  </p>
+
+  <button class="btn" onclick="concluirModulo(1)">
+    Concluir Módulo 1
+  </button>
+</main>
+
 <script src="script.js"></script>
-
-<script>
-  document.getElementById("btnConcluir").addEventListener("click", function () {
-    concluirModulo(1);
-  });
-</script>
-
 </body>
 </html>
