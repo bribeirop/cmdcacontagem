@@ -94,17 +94,6 @@ function login(event) {
   window.location.href = "area-aluno.html";
 }
 
-/* =========================
-   CONCLUIR MÓDULO
-========================= */
-function concluirModulo(numero) {
-  let progresso = JSON.parse(localStorage.getItem("progresso")) || {
-    modulo1: false,
-    modulo2: false,
-    modulo3: false,
-    modulo4: false
-  };
-
   progresso[`modulo${numero}`] = true;
   localStorage.setItem("progresso", JSON.stringify(progresso));
 
