@@ -18,28 +18,20 @@ function carregarProgresso() {
     const modulo = parseInt(card.dataset.modulo);
     const botao = card.querySelector(".btn");
 
-    // Módulo concluído
     if (progresso.includes(modulo)) {
       botao.textContent = "Concluído ✅";
-      botao.classList.remove("bloqueado");
-      botao.removeAttribute("href");
       botao.style.pointerEvents = "none";
       return;
     }
 
-    // Liberar próximo módulo
     if (progresso.includes(modulo - 1)) {
       botao.textContent = "Acessar";
       botao.href = `modulo${modulo}.html`;
-      botao.classList.remove("bloqueado");
       botao.style.pointerEvents = "auto";
       return;
     }
 
-    // Ainda bloqueado
     botao.textContent = "Bloqueado";
-      botao.removeAttribute("href");
-      botao.classList.add("bloqueado");
-      botao.style.pointerEvents = "none";
+    botao.style.pointerEvents = "none";
   });
 }
