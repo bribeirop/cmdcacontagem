@@ -1,61 +1,66 @@
 const TOTAL_MODULOS = 4;
 
+/* Marca módulo como concluído */
 function concluirModulo(numero) {
-  let progresso = JSON.parse(localStorage.getItem("progressoCurso")) || [];
-
-  if (!progresso.includes(numero)) {
-    progresso.push(numero);
-    localStorage.setItem("progressoCurso", JSON.stringify(progresso));
-  }
-
-  window.location.href = "aluno.html";
+  localStorage.setItem(`modulo${numero}`, 'concluido');
+  window.location.href = 'area-aluno.html';
 }
 
-function carregarProgresso() {
-  const progresso = JSON.parse(localStorage.getItem("progressoCurso")) || [];
-
-  document.querySelectorAll(".card").forEach(card => {
-    const modulo = parseInt(card.dataset.modulo);
-    const botao = card.querySelector(".btn");
-
-    if (progresso.includes(modulo)) {
-      botao.textContent = "Concluído ✅";
-      botao.style.pointerEvents = "none";
-      return;
-    }
-
-    if (progresso.includes(modulo - 1)) {
-      botao.textContent = "Acessar";
-      botao.href = `modulo${modulo}.html`;
-      botao.style.pointerEvents = "auto";
-      return;
-    }
-
-    botao.textContent = "Bloqueado";
-    botao.style.pointerEvents = "none";
-  });
-}
-
-function validarQuiz(modulo) {
+/* Validação do quiz */
+function validarQuiz(numero) {
   const resposta = document.querySelector('input[name="quiz"]:checked');
-  const msg = document.getElementById("quiz-msg");
+  const msg = document.getElementById('quiz-msg');
 
   if (!resposta) {
-    msg.textContent = "⚠️ Selecione uma resposta.";
-    msg.style.color = "orange";
+    msg.innerText = 'Selecione uma resposta.';
+    msg.style.color = 'red';
     return;
   }
 
-  if (resposta.value === "correto") {
-    msg.textContent = "✅ Resposta correta! Módulo liberado.";
-    msg.style.color = "green";
-
-    setTimeout(() => {
-      concluirModulo(modulo);
-    }, 1200);
-
+  if (resposta.value === 'correto') {
+    concluirModulo(numero);
   } else {
-    msg.textContent = "❌ Resposta incorreta. Tente novamente.";
-    msg.style.color = "red";
+    msg.innerText = 'Resposta incorreta. Tente novamente.';
+    msg.style.color = 'red';
+  }
+}
+
+/* Carrega progresso corretamente */
+function carregarProgresso() {
+  for (let i = 1; i <= TOTAL_MODULOS; i++) {
+    const card = document.querySelector(`[data-modulo="${i}"]`);
+    if (!card) continue;
+
+    const btn = card.querySelector('.btn');
+
+    const anterior = localStorage.getItem(`modulo${i - 1}`);
+    const atual = localStorage.getItem(`modulo${i}`);
+
+    if (i === 1 || anterior === 'concluido') {
+      btn.classList.remove('bloqueado');
+      btn.innerText = 'Acessar';
+      btn.href = `modulo${i}.html`;
+    } else {
+      btn.classList.add('bloqueado');
+      btn.innerText = 'Bloqueado';
+      btn.removeAttribute('href');
+    }
+
+    if (atual === 'concluido') {
+      btn.innerText = 'Concluído ✅';
+      btn.classList.remove('bloqueado');
+      btn.removeAttribute('href');
+    }
+  }
+
+  // Certificado
+  const certificado = document.getElementById('certificado');
+  if (
+    localStorage.getItem('modulo1') === 'concluido' &&
+    localStorage.getItem('modulo2') === 'concluido' &&
+    localStorage.getItem('modulo3') === 'concluido' &&
+    localStorage.getItem('modulo4') === 'concluido'
+  ) {
+    if (certificado) certificado.style.display = 'block';
   }
 }
