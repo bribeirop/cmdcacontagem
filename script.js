@@ -67,12 +67,17 @@ function carregarProgresso() {
 /* =========================
    CONCLUIR MÓDULO
 ========================= */
-function concluirModulo(numero) {
-  let progresso = JSON.parse(localStorage.getItem("progresso")) || {};
+function login(event) {
+  event.preventDefault();
 
-  progresso[`modulo${numero}`] = true;
+  const nome = document.getElementById("nome").value;
 
-  localStorage.setItem("progresso", JSON.stringify(progresso));
+  if (nome.trim() === "") {
+    alert("Digite seu nome");
+    return;
+  }
+
+  localStorage.setItem("aluno_nome", nome);
 
   window.location.href = "area-aluno.html";
 }
