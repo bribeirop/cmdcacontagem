@@ -2,71 +2,62 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Módulo 3 – Controle e Transparência</title>
+  <title>Módulo 3 — Prestação de Contas</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body onload="verificarLogin()">
 
-<header class="topo">
-  <h1>Módulo 3</h1>
-  <p>Controle, Fiscalização e Transparência</p>
+<header class="topbar fixed">
+  <div class="container">
+    <div class="logo">FIA<span>Edu</span></div>
+
+    <nav class="menu">
+      <a href="area-aluno.html">← Voltar</a>
+    </nav>
+  </div>
 </header>
 
-<main class="conteudo">
+<section class="section">
+  <div class="container">
 
-  <section class="bloco">
-    <h2>📺 Aula em Vídeo</h2>
-    <div class="video">
-      <iframe 
-        src="https://www.youtube.com/embed/VIDEO_ID_AQUI"
-        frameborder="0"
-        allowfullscreen>
-      </iframe>
+    <h2>Módulo 3 — Prestação de Contas</h2>
+
+    <!-- VÍDEO -->
+    <div class="bloco">
+      <h3>📽 Aula em vídeo</h3>
+      <div class="video">
+        <iframe
+          src="https://www.youtube.com/embed/3tmd-ClpJxA"
+          title="Aula Módulo 3"
+          allowfullscreen>
+        </iframe>
+      </div>
     </div>
-  </section>
 
-  <section class="bloco">
-    <h2>📘 Conteúdo Teórico</h2>
-    <p>
-      A prestação de contas garante a transparência e a correta aplicação
-      dos recursos destinados às políticas públicas.
-    </p>
-    <ul>
-      <li>Controle social</li>
-      <li>Prestação de contas</li>
-      <li>Responsabilidade pública</li>
-    </ul>
-  </section>
+    <!-- TEXTO -->
+    <div class="bloco">
+      <h3>📘 Conteúdo</h3>
+      <p>
+        A prestação de contas é essencial para garantir transparência,
+        controle social e credibilidade na utilização dos recursos do FIA.
+      </p>
+      <p>
+        Neste módulo você entenderá os documentos exigidos, prazos,
+        indicadores e boas práticas de controle.
+      </p>
+    </div>
 
-  <section class="bloco quiz">
-    <h2>❓ Quiz</h2>
-    <p><strong>Pergunta:</strong> Por que a prestação de contas é importante?</p>
+    <!-- CONCLUIR -->
+    <div class="bloco">
+      <button class="btn btn-primary" onclick="concluirModulo(3)">
+        Concluir Módulo
+      </button>
+    </div>
 
-    <label>
-      <input type="radio" name="quiz" value="correto">
-      Garante transparência e controle social
-    </label>
-
-    <label>
-      <input type="radio" name="quiz" value="errado">
-      Apenas para fins internos
-    </label>
-
-    <label>
-      <input type="radio" name="quiz" value="errado">
-      Não é obrigatória
-    </label>
-
-    <button class="btn" onclick="validarQuiz(3)">
-      Enviar resposta
-    </button>
-
-    <p id="quiz-msg" class="mensagem"></p>
-  </section>
-
-</main>
+  </div>
+</section>
 
 <script src="script.js"></script>
 </body>
