@@ -35,3 +35,27 @@ function carregarProgresso() {
     botao.style.pointerEvents = "none";
   });
 }
+
+function validarQuiz(modulo) {
+  const resposta = document.querySelector('input[name="quiz"]:checked');
+  const msg = document.getElementById("quiz-msg");
+
+  if (!resposta) {
+    msg.textContent = "⚠️ Selecione uma resposta.";
+    msg.style.color = "orange";
+    return;
+  }
+
+  if (resposta.value === "correto") {
+    msg.textContent = "✅ Resposta correta! Módulo liberado.";
+    msg.style.color = "green";
+
+    setTimeout(() => {
+      concluirModulo(modulo);
+    }, 1200);
+
+  } else {
+    msg.textContent = "❌ Resposta incorreta. Tente novamente.";
+    msg.style.color = "red";
+  }
+}
