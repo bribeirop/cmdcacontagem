@@ -3,40 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <title>Certificado</title>
-  <style>
-    body {
-      font-family: Georgia, serif;
-      text-align: center;
-      padding: 80px;
-    }
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .certificado {
-      border: 8px solid #0b3c5d;
-      padding: 60px;
-    }
+  <!-- jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
-    h1 {
-      color: #0b3c5d;
-      margin-bottom: 40px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-<div class="certificado">
-  <h1>Certificado de Participação</h1>
-  <p>Certificamos que</p>
-  <h2>__________________________</h2>
-  <p>
-    concluiu o <strong>Curso de Formação para Conselheiros FIA</strong>,
-    com carga horária total de 40 horas.
-  </p>
-  <p>Data: ____ / ____ / 2025</p>
-</div>
+<body onload="gerarCertificado()">
 
-<p style="margin-top:40px">
-  👉 Para gerar o PDF: <strong>Ctrl + P → Salvar como PDF</strong>
-</p>
+<header class="topbar fixed">
+  <div class="container">
+    <div class="logo">FIA<span>Edu</span></div>
+    <nav>
+      <a href="area-aluno.html">← Área do Aluno</a>
+    </nav>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container" style="text-align:center">
+
+    <h2>🎓 Certificado de Conclusão</h2>
+    <p>Clique no botão abaixo para baixar seu certificado em PDF.</p>
+
+    <button class="btn btn-primary" onclick="baixarPDF()">
+      Baixar Certificado
+    </button>
+
+  </div>
+</section>
+
+<script>
+  let aluno = "";
+
+  function gerarCertificado() {
+    aluno = localStorage.getItem("alunoNome");
+    const progresso = Number(localStorage.getItem("moduloConcluido"));
+
+    if (!aluno || progresso < 4) {
+      alert("Certificado disponível apenas após concluir o curso.");
+      window.location.href = "area-aluno.html";
+    }
+  }
+
+  function baixarPDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF("landscape");
+
+    doc.setFillColor(240, 248, 255);
+    doc.rect(0, 0, 297, 210, "F");
+
+    doc.setFontSize(26);
+    doc.text("CERTIFICADO DE CONCLUSÃO", 148, 40, { align: "center" });
+
+    doc.setFontSize(16);
+    doc.text("Certificamos que", 148, 70, { align: "center" });
+
+    doc.setFontSize(22);
+    doc.text(aluno, 148, 90, { align: "center" });
+
+    doc.setFontSize(16);
+    doc.text(
+      "concluiu com êxito o curso",
+      148,
+      115,
+      { align: "center" }
+    );
+
+    doc.setFontSize(18);
+    doc.text(
+      "Formação para Conselheiros FIA",
+      148,
+      135,
+      { align: "center" }
+    );
+
+    doc.setFontSize(12);
+    doc.text(
+      "Emitido em " + new Date().toLocaleDateString("pt-BR"),
+      148,
+      165,
+      { align: "center" }
+    );
+
+    doc.save("certificado-fia.pdf");
+  }
+</script>
 
 </body>
 </html>
