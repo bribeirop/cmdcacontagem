@@ -44,28 +44,34 @@
       </p>
     </div>
 
-    <!-- QUIZ -->
-    <div class="bloco quiz">
-      <h3>📝 Quiz rápido</h3>
+  <!-- QUIZ OBRIGATÓRIO -->
+<div class="bloco quiz">
+  <h3>📝 Quiz obrigatório</h3>
+  <p>Qual é a finalidade do FIA?</p>
 
-      <label>
-        <input type="radio" name="q1"> O FIA financia políticas públicas
-      </label>
-      <label>
-        <input type="radio" name="q1"> O FIA é um imposto obrigatório
-      </label>
+  <label>
+    <input type="radio" name="q1" value="errado">
+    Arrecadar impostos federais
+  </label>
 
-      <button class="btn" onclick="alert('Quiz registrado!')">
-        Enviar resposta
-      </button>
-    </div>
+  <label>
+    <input type="radio" name="q1" value="certo">
+    Financiar políticas públicas para crianças e adolescentes
+  </label>
 
-    <!-- CONCLUIR -->
-    <div class="bloco">
-      <button class="btn btn-primary" onclick="concluirModulo(1)">
-        Concluir Módulo
-      </button>
-    </div>
+  <button class="btn" onclick="validarQuizModulo1()">
+    Enviar resposta
+  </button>
+
+  <p id="msgQuiz1" class="mensagem"></p>
+</div>
+
+<!-- BOTÃO CONCLUIR (INICIALMENTE ESCONDIDO) -->
+<div class="bloco" id="btnConcluir1" style="display:none">
+  <button class="btn btn-primary" onclick="concluirModulo(1)">
+    Concluir Módulo
+  </button>
+</div>
 
   </div>
 </section>
