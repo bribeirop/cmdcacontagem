@@ -21,6 +21,7 @@ function verificarLogin() {
 
   if (!nome) {
     window.location.href = "index.html";
+    return;
   }
 
   const campoNome = document.getElementById("alunoNome");
@@ -55,10 +56,12 @@ function carregarProgresso() {
   });
 
   if (concluido >= 4) {
-    document.getElementById("certificado").style.display = "block";
+    const cert = document.getElementById("certificado");
+    if (cert) cert.style.display = "block";
   }
+}
 
-  // QUIZ MÓDULO 1
+// QUIZ MÓDULO 1 (AGORA NO LUGAR CERTO)
 function validarQuizModulo1() {
   const resposta = document.querySelector('input[name="q1"]:checked');
   const msg = document.getElementById("msgQuiz1");
@@ -77,9 +80,6 @@ function validarQuizModulo1() {
     msg.innerText = "Resposta incorreta. Tente novamente.";
     msg.style.color = "red";
   }
-}
-
-
 }
 
 // CONCLUIR MÓDULO
