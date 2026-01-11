@@ -57,6 +57,29 @@ function carregarProgresso() {
   if (concluido >= 4) {
     document.getElementById("certificado").style.display = "block";
   }
+
+  // QUIZ MÓDULO 1
+function validarQuizModulo1() {
+  const resposta = document.querySelector('input[name="q1"]:checked');
+  const msg = document.getElementById("msgQuiz1");
+
+  if (!resposta) {
+    msg.innerText = "Selecione uma resposta.";
+    msg.style.color = "red";
+    return;
+  }
+
+  if (resposta.value === "certo") {
+    msg.innerText = "Resposta correta! Você pode concluir o módulo.";
+    msg.style.color = "green";
+    document.getElementById("btnConcluir1").style.display = "block";
+  } else {
+    msg.innerText = "Resposta incorreta. Tente novamente.";
+    msg.style.color = "red";
+  }
+}
+
+
 }
 
 // CONCLUIR MÓDULO
