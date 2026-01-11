@@ -12,9 +12,8 @@
 <header class="topbar fixed">
   <div class="container">
     <div class="logo">FIA<span>Edu</span></div>
-
-    <nav class="menu">
-      <a href="area-aluno.html">← Voltar</a>
+    <nav>
+      <a href="area-aluno.html">← Área do Aluno</a>
     </nav>
   </div>
 </header>
@@ -24,32 +23,31 @@
 
     <h2>Módulo 3 — Prestação de Contas</h2>
 
-    <!-- VÍDEO -->
     <div class="bloco">
       <h3>📽 Aula em vídeo</h3>
       <div class="video">
-        <iframe
-          src="https://www.youtube.com/embed/3tmd-ClpJxA"
-          title="Aula Módulo 3"
-          allowfullscreen>
-        </iframe>
+        <iframe src="https://www.youtube.com/embed/3tmd-ClpJxA" allowfullscreen></iframe>
       </div>
     </div>
 
-    <!-- TEXTO -->
     <div class="bloco">
       <h3>📘 Conteúdo</h3>
       <p>
-        A prestação de contas é essencial para garantir transparência,
-        controle social e credibilidade na utilização dos recursos do FIA.
+        A prestação de contas garante transparência, controle social
+        e credibilidade no uso dos recursos públicos.
       </p>
       <p>
-        Neste módulo você entenderá os documentos exigidos, prazos,
-        indicadores e boas práticas de controle.
+        O processo envolve documentos, prazos legais e avaliação técnica.
       </p>
     </div>
 
-    <!-- CONCLUIR -->
+    <div class="bloco quiz">
+      <h3>📝 Quiz rápido</h3>
+      <label><input type="radio" name="q3"> Prestação de contas é opcional</label>
+      <label><input type="radio" name="q3"> Prestação de contas é obrigatória</label>
+      <button class="btn" onclick="alert('Resposta registrada!')">Enviar resposta</button>
+    </div>
+
     <div class="bloco">
       <button class="btn btn-primary" onclick="concluirModulo(3)">
         Concluir Módulo
